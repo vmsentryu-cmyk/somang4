@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>사용설명서 - 소망4 목장 출석부</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px 16px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        .back-btn {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        .container {
+            padding: 16px;
+            padding-bottom: 40px;
+        }
+        
+        .section {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .step {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .step:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .step-number {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 6px;
+        }
+        
+        .step-desc {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        
+        .highlight {
+            background: #fef3c7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .button-example {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            margin: 4px 2px;
+        }
+        
+        .btn-green {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .btn-red {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        
+        .btn-purple {
+            background: #e0e7ff;
+            color: #4338ca;
+        }
+        
+        .btn-orange {
+            background: #ffedd5;
+            color: #c2410c;
+        }
+        
+        .btn-gray {
+            background: #f3f4f6;
+            color: #374151;
+        }
+        
+        .tip-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 12px;
+        }
+        
+        .tip-box-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #92400e;
+            margin-bottom: 4px;
+        }
+        
+        .tip-box-text {
+            font-size: 13px;
+            color: #92400e;
+            line-height: 1.5;
+        }
+        
+        .icon-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 12px;
+        }
+        
+        .icon-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #f9fafb;
+            padding: 10px 14px;
+            border-radius: 10px;
+        }
+        
+        .icon-item-icon {
+            font-size: 20px;
+        }
+        
+        .icon-item-text {
+            font-size: 13px;
+            color: #374151;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <button class="back-btn" onclick="location.href='index.html'">←</button>
+        <h1>📖 사용설명서</h1>
+    </div>
+    
+    <div class="container">
+        <!-- 시작하기 -->
+        <div class="section">
+            <div class="section-title">🚀 시작하기</div>
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <div class="step-title">앱 열기</div>
+                    <div class="step-desc">
+                        <span class="highlight">할렐루야 소망4 목장 입니다</span> 버튼을 눌러 시작해요
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <div class="step-title">날짜 선택하기</div>
+                    <div class="step-desc">
+                        출석 체크할 주일 날짜를 선택해요<br>
+                        <span class="highlight">초록색 체크 ✓</span>가 있는 날짜는 이미 출석 체크한 날이에요
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 출석 체크 -->
+        <div class="section">
+            <div class="section-title">✅ 출석 체크하기</div>
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <div class="step-title">출석/결석 표시</div>
+                    <div class="step-desc">
+                        각 성도님 이름 옆의 버튼을 눌러요<br><br>
+                        <span class="button-example btn-green">○ 출석</span> 예배에 참석했어요<br>
+                        <span class="button-example btn-red">✕ 결석</span> 예배에 참석 못 했어요
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <div class="step-title">출석 취소하기</div>
+                    <div class="step-desc">
+                        이미 누른 버튼을 <span class="highlight">다시 한번 누르면</span> 취소돼요
+                    </div>
+                </div>
+            </div>
+            <div class="tip-box">
+                <div class="tip-box-title">💡 팁</div>
+                <div class="tip-box-text">
+                    상단에서 출석/결석 인원을 바로 확인할 수 있어요!
+                </div>
+            </div>
+        </div>
+        
+        <!-- 기도제목 -->
+        <div class="section">
+            <div class="section-title">🙏 기도제목 입력하기</div>
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <div class="step-title">기도제목 입력</div>
+                    <div class="step-desc">
+                        각 가정 아래 <span class="highlight">기도제목을 입력하세요</span> 칸에 기도제목을 적어요
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <div class="step-title">저장하기</div>
+                    <div class="step-desc">
+                        <span class="button-example btn-purple">저장</span> 버튼을 눌러 저장해요<br>
+                        저장된 기도제목은 아래 초록색 박스에 표시돼요
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <div class="step-title">수정/삭제하기</div>
+                    <div class="step-desc">
+                        <span class="button-example btn-purple">✏️ 수정</span> 입력란에 기존 내용이 복사돼요. 수정 후 저장!<br>
+                        <span class="button-example btn-red">🗑️ 삭제</span> 기도제목을 삭제해요
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 복사하기 -->
+        <div class="section">
+            <div class="section-title">📋 카카오톡에 공유하기</div>
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <div class="step-title">출석 복사하기</div>
+                    <div class="step-desc">
+                        하단의 <span class="button-example btn-green">📋 출석 복사하기</span> 버튼을 눌러요<br>
+                        출석한 분들 명단이 복사돼요
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <div class="step-title">기도제목 복사하기</div>
+                    <div class="step-desc">
+                        하단의 <span class="button-example btn-orange">🙏 기도제목 복사하기</span> 버튼을 눌러요<br>
+                        모든 가정의 기도제목이 복사돼요
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <div class="step-title">카카오톡에 붙여넣기</div>
+                    <div class="step-desc">
+                        카카오톡 채팅방에서 <span class="highlight">길게 누르고 → 붙여넣기</span> 하면 완료!
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 하단 버튼 설명 -->
+        <div class="section">
+            <div class="section-title">📱 화면 아이콘 설명</div>
+            <div class="icon-list">
+                <div class="icon-item">
+                    <div class="icon-item-icon">🏠</div>
+                    <div class="icon-item-text">홈 (달력 화면)</div>
+                </div>
+                <div class="icon-item">
+                    <div class="icon-item-icon">❓</div>
+                    <div class="icon-item-text">사용설명서</div>
+                </div>
+                <div class="icon-item">
+                    <div class="icon-item-icon">🔄</div>
+                    <div class="icon-item-text">새로고침</div>
+                </div>
+                <div class="icon-item">
+                    <div class="icon-item-icon">📅</div>
+                    <div class="icon-item-text">날짜 선택</div>
+                </div>
+                <div class="icon-item">
+                    <div class="icon-item-icon">⚙️</div>
+                    <div class="icon-item-text">인원 관리</div>
+                </div>
+            </div>
+            <div class="tip-box">
+                <div class="tip-box-title">💡 문제가 생겼을 때</div>
+                <div class="tip-box-text">
+                    화면이 이상하면 <span class="highlight">🔄 새로고침</span> 버튼을 눌러보세요!
+                </div>
+            </div>
+        </div>
+        
+        <!-- 인원 관리 -->
+        <div class="section">
+            <div class="section-title">⚙️ 인원 관리하기</div>
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <div class="step-title">관리 화면 열기</div>
+                    <div class="step-desc">
+                        하단의 <span class="button-example btn-purple">⚙️ 관리</span> 버튼을 눌러요
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <div class="step-title">비밀번호 입력</div>
+                    <div class="step-desc">
+                        비밀번호: <span class="highlight">동안교회</span>
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <div class="step-title">부부 추가</div>
+                    <div class="step-desc">
+                        이름 2개, 역할, 자녀 정보를 입력하고<br>
+                        <span class="highlight">부부 추가</span> 버튼을 눌러요
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <div class="step-title">정보 수정/삭제</div>
+                    <div class="step-desc">
+                        목록에서 부부를 선택하면<br>
+                        이름, 역할, 자녀 정보를 수정하거나 삭제할 수 있어요
+                    </div>
+                </div>
+            </div>
+            <div class="tip-box">
+                <div class="tip-box-title">💡 예비목원 → 목원 이동</div>
+                <div class="tip-box-text">
+                    부부를 선택한 후 역할을 변경하고 <span class="highlight">수정 저장</span>을 누르면 돼요!
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
